@@ -52,7 +52,7 @@ function onGalleryImageClick(evt) {
 
   const instance = basicLightbox.create(`
   <div class="modal">
-    <img src="${carrentImage.dataset.source}">
+    <img src="${carrentImage.dataset.source}" width="800" height="600">
 
   </div>
 `);
@@ -76,20 +76,4 @@ function onEscKeyPress(e) {
     document.removeEventListener('keydown', onEscKeyPress);
   }
 }
-
 }
-
-
-
-
-console.log(basicLightbox);
-
-
-
-
-/* <div class="basicLightbox basicLightbox--visible">
-			<div class="basicLightbox__placeholder" role="dialog"><div class="modal">
-    <img src="https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg">
-
-  </div></div>
-		</div> */
