@@ -7,8 +7,8 @@ console.log(galleryItems);
 const addStileScc = `<link href="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.css" rel="stylesheet">`;
 document.head.insertAdjacentHTML('beforeend', addStileScc);
 
-const addScriptMod = `<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>`;
-document.body.insertAdjacentHTML('beforeend', addScriptMod);
+// const addScriptMod = `<script src="https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js"></script>`;
+// document.body.insertAdjacentHTML('beforeend', addScriptMod);
 
 //   const script = document.createElement('script');
 //     script.src = 'https://cdn.jsdelivr.net/npm/basiclightbox@5.0.4/dist/basicLightbox.min.js';
@@ -58,9 +58,38 @@ function onGalleryImageClick(evt) {
 `);
 
   instance.show();
+const imageOpen = document.querySelector('.basicLightbox__placeholder');
+imageOpen.addEventListener('click', onImageClickClose);
+
+function onImageClickClose (e) { 
+     if (e.target === e.carrentTarget) {
+        return;
+    }
+   instance.close()
 }
+
+
+ document.addEventListener('keydown', onEscKeyPress);
+function onEscKeyPress(e) {
+  if (e.code === 'Escape') {
+    instance.close();
+    document.removeEventListener('keydown', onEscKeyPress);
+  }
+}
+
+}
+
+
 
 
 console.log(basicLightbox);
 
 
+
+
+/* <div class="basicLightbox basicLightbox--visible">
+			<div class="basicLightbox__placeholder" role="dialog"><div class="modal">
+    <img src="https://cdn.pixabay.com/photo/2018/09/13/10/36/mountains-3674334_1280.jpg">
+
+  </div></div>
+		</div> */
