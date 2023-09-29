@@ -35,6 +35,7 @@ return galleryItems
       src="${preview}"
       data-source="${original}"
       alt="${description}"
+      loading="lazy"
     />
   </a>
 </li>
